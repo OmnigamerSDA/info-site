@@ -60,7 +60,7 @@ youtube_url: https://youtube.com/omnigamer
 twitch_url: https://twitch.tv/omnigamer
 
 # Google Analytics Tracking ID goes here:
-google_analytics: 142468151
+google_analytics: UA-142468151-1
 
 # The following settings are NECESSARY for the Prologue theme to run:
 remote_theme: chrisbobbe/jekyll-theme-prologue
