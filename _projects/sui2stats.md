@@ -1,0 +1,14 @@
+---
+title: Suikoden II Stats Calculator
+subtitle: Tricky Math Made Easy
+layout: page
+icon: fa-calculator
+order: 4
+---
+<span class="image right"><img src="{{ 'assets/images/sui2stats.png' | relative_url }}" alt="" /></span>Suikoden II has a somewhat unique leveling system with regard to character stats. Each character has specific growth rates for individual stats which follow set patterns, which are referred to by the community as ranks. Without going too much into the finer details, each rank describes how much of the stat a character will get on a level-up, with a set probability of getting one additional unit of that stat. But this is further complicated by the fact that the amount and probability change at set level boundaries - 20 and 60, specifically.
+
+While this information doesn't matter a whole lot to a typical player, it is vital to planning out aspects of speedruns. For example, there were many cases where I wanted to know at what level a character was likely to have at least 100 MAG, or how likely their SPD would exceed a given boss's. It wasn't terribly difficult to calculate one-off instances, but the time spent looking up individual characters' stat ranks and setting up scenarios added up. It was also difficult to get a sense of the actual distribution of stats for a given level. I needed something that would simplify the whole process and make it painless to check stat distributions for a given character at a given level.
+
+That's what inspired me to create this Suikoden II Stats Calculator. Since all the information was available, it was just a matter of compiling it into a usable GUI. That said, there was some difficulty with the actual calculation process. Viewed another way, the level-up system follows a binomial distribution for each stat. While calculating the average for a given number of binomial checks is not difficult, things get trickier for determining the actual distribution of multiple consecutive binomial checks. This is further complicated by the changing probabilities at levels 20 and 60 - essentially turning the true distribution into the convolution of multiple different binomial distributions.
+
+That said, it is still tractable for all values up to the max character level of 99. I followed a brute-force approach that calculated the probabilities of each potential stat value for a given level. On a modern computer most levels shouldn't take any notable amount of time, but levels above 80 may take a few seconds to calculate. In any case, this was a fun little investigation project and I think it turned out pretty well! You can check out the [GitHub](https://github.com/OmnigamerSDA/Sui2StatsChecker) to download the release or take a closer look at the code.

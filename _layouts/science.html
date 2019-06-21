@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- assign _posts = site.science | sort: 'order' -%}
+{%- include header.html scrolly_nav=_posts -%}
+<!-- Main -->
+<div id="main">
+	{%- if page.content != "" -%}
+		{%- include section.html title=page.title subtitle=page.subtitle photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
+	{%- endif -%}
+	<!-- Posts List -->
+	{%- for _post in _posts -%}
+		{%- include article.html title=_post.title subtitle=_post.subtitle photo=_post.cover-photo photo-alt=_post.cover-photo-alt auto-header=_post.auto-header content=_post.content -%}
+		{%- capture _title -%}
+			{{- _post.title -}}
+		{%- endcapture -%}
+	{%- endfor -%}
+</div>

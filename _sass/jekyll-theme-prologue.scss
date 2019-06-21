@@ -57,6 +57,26 @@
 		)
 	));
 
+	
+	.auto-resizable-iframe {
+	  max-width: 854px;
+	  margin: 0px auto;
+	}
+
+	.auto-resizable-iframe > div {
+	  position: relative;
+	  padding-bottom: 56.25%;
+	  height: 0px;
+	}
+
+	.auto-resizable-iframe iframe {
+	  position: absolute;
+	  top: 0px;
+	  left: 0px;
+	  width: 100%;
+	  height: 100%;
+	}
+	
 /* Basic */
 
 	body {
@@ -248,7 +268,7 @@
 		&.avatar48 {
 			width: 48px;
 			height: 48px;
-			background: #f00;
+			
 
 			img {
 				width: 48px;
@@ -270,11 +290,20 @@
 		&.left {
 			float: left;
 			margin: 0 2em 2em 0;
+			img {
+				width: auto;
+				height: 450px;
+			}
 		}
 
 		&.right {
 			float: right;
 			margin: 0 0 2em 2em;
+			img {
+				width: auto;
+				height: 450px;
+				max-height: 450px;
+			}
 		}
 
 		&.centered {
@@ -481,6 +510,10 @@
 	.icon-b {
 		@include icon(before, brands);
 	}
+	
+	.icon-s {
+		@include icon(before, solid);
+	}
 
 /* Header */
 
@@ -502,6 +535,7 @@
 		.top {
 			@include vendor('flex-grow', '1');
 		}
+
 
 		.bottom {
 			@include vendor('flex-shrink', '0');

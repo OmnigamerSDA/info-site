@@ -1,0 +1,22 @@
+---
+title: MashAttack
+subtitle: Button Mashing Performance Tester
+layout: page
+icon: fa-chart-line
+order: 1
+---
+<span class="image right"><img src="{{ 'assets/images/mashattack_boxes.jpg' | relative_url }}" alt="" /></span>Like it or not, mashing is a commonly-required gaming skill. The ability to hit a button rapidly in succession may not seem like much on its surface, but it comes into play in far more scenarios than the stray minigame. In speedrunning, mashing ability can help shave overhead on interacting with menus, or may even be required to execute specific tricks. But it's still hard!
+
+That was the thought that started off my interest in making MashAttack, a self-contained mashing ability tester. MashAttack actually refers to a suite of software and hardware built to help players better understand their mashing strengths and weaknesses. My hope is that these insights would help them to mash better, but also to understand their limits so they could mitigate repetitive motion injuries.
+
+The actual hardware consists of two custom wooden boxes. On top of the box are two Seimitsu arcade buttons with light rings, and on the front are ports for connecting NES, SNES, and Genesis controllers. Inside the boxes is a teensy microcontroller that handles interfacing with the various control methods, controlling the lights, and communicating back to the host.
+
+<span class="image left"><img src="{{ 'assets/images/mashattack_ui.png' | relative_url }}" alt="" /></span>On the software end, a host program issues requests to the teensys over USB to start various tests and prescribes the input method. Once a player begins and completes a mashing session, the teensy sends the data back over to the host, where it gets processed and displayed as performance over time. It also reports other metrics, such as rise and fall time, a consistency score, and of course average rate. Using some Google Sheets shenanigans I was also able to store statistics for each session and player.
+
+Mashing sessions are configured to one of three different durations: Sprint (5 seconds), Standard (10), and Marathon (30). These durations are set up to let players grasp their performance in different scenarios. Additionally, tests can be configured to respond to two distinct buttons to allow for scenarios requiring alternating presses.
+
+I brought these setups to AGDQ and SGDQ 2017 to collect data and feedback from players. The whole setup was well-received, and I had more than 100 partipants try out the various modes. The overall summary is that, for the most part, you don't need to be an incredible masher to be an incredible player. Without going into too much detail, diminishing returns hit mashing rate pretty hard, and it really levels off after about 10 Hz. The good news is that the average rate among all the participants was about 10 Hz - and even those with lower rates could likely hit 10 Hz with some practice and adjustments to their mashing technique.
+
+<span class="image right"><img src="{{ 'assets/images/mashbattle_ui.png' | relative_url }}" alt="" /></span>While you can find the source code for the basic MashAttack software program on my [GitHub](https://github.com/OmnigamerSDA/MashAttack/tree/master/MashAttack), I have not yet published the source for the teensy firmware that is the other part of the equation. There are also two other supporting software programs that are not yet on GitHub: MashBattle and MashLeader. MashLeader is a basic leaderboard display that pulls information from the Google Sheets datasets to show the best mashers in various categories. MashBattle, on the other hand, is a head-to-head version of MashAttack that lets two players compete in a mashing tug-of-war. I hope to get everything onto GitHub eventually, but a lot of the code still needs to be cleaned and updated, and it's just not a high priority for now.
+
+<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr"><a href="https://twitter.com/Keaur?ref_src=twsrc%5Etfw">@Keaur</a> is completely unfair. 353 mashes across 2 buttons in 10 seconds! <a href="https://twitter.com/hashtag/SGDQ2017?src=hash&amp;ref_src=twsrc%5Etfw">#SGDQ2017</a> <a href="https://t.co/EyOSsccUnL">pic.twitter.com/EyOSsccUnL</a></p>&mdash; Omnigamer (@TheOmnigamer) <a href="https://twitter.com/TheOmnigamer/status/883834714477514752?ref_src=twsrc%5Etfw">July 8, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
