@@ -1,8 +1,11 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{- site.google_analytics -}}"></script>
+{%- assign _analytics_id = site.google_analytics | to_s | strip -%}
+{%- if _analytics_id and _analytics_id != '' and _analytics_id contains 'G-' -%}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{- _analytics_id -}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{- site.google_analytics -}}');
+  gtag('config', '{{- _analytics_id -}}');
 </script>
+{%- endif -%}

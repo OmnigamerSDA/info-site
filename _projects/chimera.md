@@ -8,7 +8,7 @@ icon: fa-gamepad
 
 My experiences with Input Control and MashAttack left me with a pretty good understanding of interacting with controllers and consoles from microcontrollers. I started thinking about how I could apply these skills to something new and useful. My first thought was to start making input viewer hardware and software for all manner of other gaming controllers, but I decided that it would be a really inefficient and unrewarding process to just iterate through the different controllers and make minor adjustments for each. There had to be something better I could do.
 
-<span class="image center"><img src="{{ 'assets/images/chimera.png' | relative_url }}" alt="" /></span>
+<span class="image center"><img src="{{ 'assets/images/chimera.PNG' | relative_url }}" alt="" /></span>
 
 That's where I started to consider the other implications of having full control of the communications between console and controller. In particular, I became interested in the idea of remapping controls to make for more comfortable inputs in specific situations. Some games have this feature built in, but many are limited in what they can do. Providing the ability to set up controls in whatever way lets you perform best seemed like a reasonable new set of functionality I could provide.
 
