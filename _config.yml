@@ -30,8 +30,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Omnigamer
-subtitle: Gameplay Researcher
+title: Eric Koziel (Omnigamer)
+subtitle: Systems Researcher & Technical Designer
 description: >- # this means to ignore newlines until "baseurl:"
   This is a site listing Omnigamer's
   various projects and accomplishments
@@ -54,7 +54,7 @@ github_url: https://github.com/OmnigamerSDA
 pinterest_url:
 slack_url:
 dribbble_url:
-discord_url: https://discord.gg/v7eB4r4
+discord_url: 
 patreon_url: https://www.patreon.com/omnigamer
 youtube_url: https://youtube.com/omnigamer
 twitch_url: https://twitch.tv/omnigamer
